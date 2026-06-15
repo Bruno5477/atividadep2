@@ -1,4 +1,8 @@
 import time
+from pathlib import Path
+import sys
+
+sys.path.append(str(Path(__file__).resolve().parents[1]))
 
 from sqlalchemy import create_engine, text
 from sqlalchemy.exc import OperationalError
