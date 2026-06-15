@@ -5,6 +5,7 @@ services:
       DATABASE_URL: ${DATABASE_URL:-postgresql+psycopg://anime:anime@db:5432/anime_store}
       SECRET_KEY: ${SECRET_KEY:-dev-secret}
       PORT: ${PORT:-8000}
+      PYTHONPATH: /app
     ports:
       - "${PORT:-8000}:${PORT:-8000}"
     depends_on:
