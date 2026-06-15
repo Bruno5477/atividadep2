@@ -251,6 +251,12 @@ h1 {
   background: #f0ece4;
 }
 
+.product-card img.product-image-face {
+  padding: 0;
+  object-fit: cover;
+  object-position: 58% 18%;
+}
+
 .product-info {
   padding: 18px;
 }
