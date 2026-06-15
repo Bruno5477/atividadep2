@@ -121,9 +121,9 @@ Acesse http://localhost:8000/docs e siga esta ordem:
 ```json
 {
   "category_id": 1,
-  "name": "Naruto Uzumaki Figure",
+  "name": "Figure do Goku",
   "description": "Colecionavel oficial de mesa",
-  "franchise": "Naruto"
+  "franchise": "Dragon Ball"
 }
 ```
 
@@ -132,7 +132,7 @@ Acesse http://localhost:8000/docs e siga esta ordem:
 ```json
 {
   "product_id": 1,
-  "sku": "nar-fig-01",
+  "sku": "goku-fig-01",
   "name": "Standard",
   "price": "120.00",
   "stock_quantity": 2
@@ -293,7 +293,7 @@ O que explicar:
 
 ## 10. Registro de execucao
 
-- Primeiro testei o fluxo basico de pedido com produto Naruto, cliente e variante com estoque 2.
+- Primeiro testei o fluxo basico de pedido com Figure do Goku, cliente e variante com estoque 2.
 - Depois forcei dois pedidos disputando o mesmo estoque e confirmei que o segundo recebe `INSUFFICIENT_STOCK`.
 - Em seguida validei pagamento: pedido em `draft` nao paga e pedido confirmado so aceita valor exato.
 - Depois testei cupom com subtotal minimo para garantir erro padronizado.

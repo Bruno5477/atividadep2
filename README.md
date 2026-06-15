@@ -373,7 +373,7 @@ O comportamento correto quando dois operadores tentam confirmar pedidos sobre a 
 - `GET /health`
 - `POST /catalog/categories`
 - `POST /catalog/products`
-- `GET /catalog/products?limit=10&offset=0&franchise=Naruto&active=true`
+- `GET /catalog/products?limit=10&offset=0&franchise=Dragon%20Ball&active=true`
 - `POST /catalog/variants`
 - `POST /catalog/variants/{variant_id}/stock`
 - `POST /customers`

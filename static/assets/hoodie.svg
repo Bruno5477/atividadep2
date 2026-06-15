@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 675" role="img" aria-label="Moletom anime">
-  <rect width="900" height="675" fill="#f3f1f7"/>
-  <rect x="86" y="76" width="728" height="523" rx="28" fill="#ffffff" stroke="#17151f" stroke-width="8"/>
-  <path d="M343 170c28-39 186-39 214 0l80 54 74 257-96 36-42-130v170H327V387l-42 130-96-36 74-257 80-54Z" fill="#17151f" stroke="#17151f" stroke-width="8" stroke-linejoin="round"/>
-  <path d="M359 182c38 62 143 62 182 0" fill="#31303a" stroke="#ffffff" stroke-width="8"/>
-  <path d="M408 235c30 30 54 30 84 0" fill="none" stroke="#e0a92f" stroke-width="10" stroke-linecap="round"/>
-  <path d="M382 360c55-62 105-62 158 0-62 36-105 36-158 0Z" fill="#d93f3f" stroke="#ffffff" stroke-width="8" stroke-linejoin="round"/>
-  <path d="M396 451h108" stroke="#ffffff" stroke-width="10" stroke-linecap="round"/>
-</svg>
