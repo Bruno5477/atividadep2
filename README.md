@@ -5,7 +5,7 @@ API REST em FastAPI para um ecommerce de produtos de anime, com estoque reservad
 ## Como Rodar
 
 ```bash
-cp .env.example .env
+
 docker compose up --build
 ```
 
