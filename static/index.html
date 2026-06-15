@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Anime Store</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/">
+        <span class="brand-mark">AS</span>
+        <span>Anime Store</span>
+      </a>
+      <nav class="nav-links" aria-label="Navegacao principal">
+        <a href="#produtos">Produtos</a>
+        <a href="#colecoes">Colecoes</a>
+        <a href="/docs">Docs da API</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Figure, manga, roupa e colecionavel</p>
+          <h1>Anime Store</h1>
+          <p class="hero-text">
+            Uma vitrine para produtos de anime conectada a API de ecommerce com estoque,
+            cupons, pedidos, pagamento e envio.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="/docs">Abrir API</a>
+            <a class="button secondary" href="#produtos">Ver vitrine</a>
+          </div>
+        </div>
+
+        <div class="hero-stage" aria-label="Produtos em destaque">
+          <img class="hero-item hero-item-large" src="/static/assets/figure.svg" alt="Figure colecionavel" />
+          <img class="hero-item" src="/static/assets/manga.svg" alt="Colecao de manga" />
+          <img class="hero-item" src="/static/assets/hoodie.svg" alt="Moletom anime" />
+        </div>
+      </section>
+
+      <section class="store-strip" aria-label="Resumo da loja">
+        <div>
+          <strong>Estoque reservado</strong>
+          <span>Confirmacao segura de pedidos</span>
+        </div>
+        <div>
+          <strong>Cupons ativos</strong>
+          <span>Desconto por subtotal e validade</span>
+        </div>
+        <div>
+          <strong>Frete calculado</strong>
+          <span>Total derivado automaticamente</span>
+        </div>
+      </section>
+
+      <section id="produtos" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Lancamentos</p>
+          <h2>Produtos em destaque</h2>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <img src="/static/assets/figure.svg" alt="Figure Naruto Uzumaki" />
+            <div class="product-info">
+              <span class="tag">Figure</span>
+              <h3>Naruto Uzumaki Figure</h3>
+              <p>Colecionavel de mesa com acabamento fosco.</p>
+              <strong>R$ 120,00</strong>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="/static/assets/manga.svg" alt="Box de mangas shonen" />
+            <div class="product-info">
+              <span class="tag">Manga</span>
+              <h3>Shonen Starter Box</h3>
+              <p>Volume inicial para montar a colecao.</p>
+              <strong>R$ 89,90</strong>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="/static/assets/hoodie.svg" alt="Moletom anime preto" />
+            <div class="product-info">
+              <span class="tag">Roupa</span>
+              <h3>Moletom Akatsuki</h3>
+              <p>SKU com variacao de tamanho e estoque dedicado.</p>
+              <strong>R$ 179,90</strong>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="colecoes" class="collection-band">
+        <div>
+          <p class="eyebrow">Colecoes</p>
+          <h2>Monte pedidos com itens de varias franquias</h2>
+        </div>
+        <a class="button dark" href="/docs">Testar endpoints</a>
+      </section>
+    </main>
+  </body>
+</html>

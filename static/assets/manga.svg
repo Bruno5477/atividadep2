@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 675" role="img" aria-label="Box de manga">
+  <rect width="900" height="675" fill="#eef7f6"/>
+  <rect x="90" y="92" width="720" height="492" rx="28" fill="#ffffff" stroke="#17151f" stroke-width="8"/>
+  <rect x="180" y="166" width="120" height="340" rx="8" fill="#d93f3f" stroke="#17151f" stroke-width="8"/>
+  <rect x="315" y="136" width="120" height="370" rx="8" fill="#e0a92f" stroke="#17151f" stroke-width="8"/>
+  <rect x="450" y="186" width="120" height="320" rx="8" fill="#007f7a" stroke="#17151f" stroke-width="8"/>
+  <rect x="585" y="154" width="120" height="352" rx="8" fill="#234f9f" stroke="#17151f" stroke-width="8"/>
+  <path d="M215 218h50M350 188h50M485 238h50M620 206h50" stroke="#fff" stroke-width="12" stroke-linecap="round"/>
+  <path d="M160 530h580" stroke="#17151f" stroke-width="10" stroke-linecap="round"/>
+</svg>

@@ -9,6 +9,8 @@ API REST em FastAPI para um ecommerce de produtos de anime, com estoque reservad
 docker compose up --build
 ```
 
+Pagina inicial da loja: `http://localhost:8000/`
+
 Documentacao interativa: `http://localhost:8000/docs`
 
 Testes dentro do container:
