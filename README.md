@@ -401,5 +401,4 @@ O comportamento correto quando dois operadores tentam confirmar pedidos sobre a 
 - Dia 3: percebi que confirmar pedido nao deveria baixar estoque fisico; criei `reserved_quantity`.
 - Dia 4: adicionei regras de cupom, frete e pagamento com valor exato.
 - Dia 5: adicionei envio, baixa de estoque e liberacao de reserva.
-- Dia 6: criei auditoria e movimentos de estoque para explicar o historico na apresentacao.
-- Dia 7: liguei a vitrine HTML na rota `/` e organizei os testes de regras de negocio.
+- Dia 6: criei auditoria e movimentos de estoque para explicar o historico na apresentacao, liguei a vitrine HTML na rota `/` e organizei os testes de regras de negocio.
