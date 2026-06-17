@@ -1,6 +1,6 @@
-# Guia de testes - Anime Store API
+# Guia de testes - BO Mangas API
 
-Este guia mostra como rodar os testes automatizados, como testar a API manualmente e como explicar a cobertura da Anime Store.
+Este guia mostra como rodar os testes automatizados, como testar a API manualmente e como explicar a cobertura da BO Mangas.
 
 ## 1. Rodar todos os testes com Docker
 
@@ -24,6 +24,13 @@ Resultado esperado:
 
 Se aparecer erro parecido com `dockerDesktopLinuxEngine`, o Docker Desktop esta fechado ou ainda nao terminou de iniciar.
 
+Se voce ja tinha rodado a versao antiga do projeto com o banco `anime_store`, o volume do PostgreSQL pode continuar com o usuario antigo. Nesse caso, recrie o ambiente antes de testar a BO Mangas:
+
+```bash
+docker compose down -v
+docker compose up --build
+```
+
 ## 2. Rodar a API
 
 Com Docker Desktop aberto:
@@ -36,7 +43,7 @@ Depois acesse:
 
 - Swagger: http://localhost:8000/docs
 - Health check: http://localhost:8000/health
-- Loja integrada: http://localhost:8000/
+- Biblioteca integrada: http://localhost:8000/
 - Adminer: http://localhost:8080
 
 Para parar:
@@ -111,8 +118,8 @@ Acesse http://localhost:8000/docs e siga esta ordem:
 
 ```json
 {
-  "name": "Figures",
-  "description": "Colecionaveis oficiais de anime"
+  "name": "Shonen",
+  "description": "Volumes e colecoes de mangas shonen"
 }
 ```
 
@@ -121,9 +128,9 @@ Acesse http://localhost:8000/docs e siga esta ordem:
 ```json
 {
   "category_id": 1,
-  "name": "Figure do Goku",
-  "description": "Colecionavel oficial de mesa",
-  "franchise": "Dragon Ball"
+  "name": "One Piece Vol. 1",
+  "description": "Primeiro volume do manga One Piece",
+  "franchise": "One Piece"
 }
 ```
 
@@ -132,9 +139,9 @@ Acesse http://localhost:8000/docs e siga esta ordem:
 ```json
 {
   "product_id": 1,
-  "sku": "goku-fig-01",
-  "name": "Standard",
-  "price": "120.00",
+  "sku": "one-piece-vol-01",
+  "name": "Volume 1",
+  "price": "39.90",
   "stock_quantity": 2
 }
 ```
@@ -154,9 +161,9 @@ Acesse http://localhost:8000/docs e siga esta ordem:
 
 ```json
 {
-  "code": "AKATSUKI10",
+  "code": "BO10",
   "percent_off": 10,
-  "min_subtotal": "100.00",
+  "min_subtotal": "30.00",
   "usage_limit": 1
 }
 ```
@@ -166,7 +173,7 @@ Acesse http://localhost:8000/docs e siga esta ordem:
 ```json
 {
   "customer_id": 1,
-  "coupon_code": "AKATSUKI10",
+  "coupon_code": "BO10",
   "items": [
     {
       "variant_id": 1,
@@ -190,8 +197,8 @@ Use o valor retornado em `grand_total` no pedido.
 
 ```json
 {
-  "amount": "126.90",
-  "provider_reference": "PIX-ANIME-001"
+  "amount": "54.81",
+  "provider_reference": "PIX-BO-001"
 }
 ```
 
@@ -293,7 +300,7 @@ O que explicar:
 
 ## 10. Registro de execucao
 
-- Primeiro testei o fluxo basico de pedido com Figure do Goku, cliente e variante com estoque 2.
+- Primeiro testei o fluxo basico de pedido com One Piece Vol. 1, cliente e variante com estoque 2.
 - Depois forcei dois pedidos disputando o mesmo estoque e confirmei que o segundo recebe `INSUFFICIENT_STOCK`.
 - Em seguida validei pagamento: pedido em `draft` nao paga e pedido confirmado so aceita valor exato.
 - Depois testei cupom com subtotal minimo para garantir erro padronizado.

@@ -1,6 +1,6 @@
-# Anime Store API
+# BO Mangas API
 
-API REST em FastAPI para uma loja de produtos de anime. O dominio simula um ecommerce com categorias, produtos, variantes vendaveis, estoque fisico, estoque reservado, clientes, cupons, pedidos, pagamentos, envios, auditoria e calculos derivados de totais.
+API REST em FastAPI para a BO Mangas, uma biblioteca/loja online de mangas. O dominio simula um ecommerce com categorias, produtos, variantes vendaveis por volume ou edicao, estoque fisico, estoque reservado, clientes, cupons, pedidos, pagamentos, envios, auditoria e calculos derivados de totais.
 
 O dominio foi escolhido para fugir de CRUD puro: um pedido depende de estoque disponivel, uso valido de cupom, transicoes permitidas, pagamento com valor exato e baixa de estoque apenas no momento correto.
 
@@ -12,7 +12,7 @@ docker compose up --build
 
 API: http://localhost:8000
 Swagger: http://localhost:8000/docs
-Loja HTML integrada: http://localhost:8000/
+Biblioteca HTML integrada: http://localhost:8000/
 Adminer: http://localhost:8080
 
 Testes dentro do container:
@@ -32,9 +32,9 @@ Abra http://localhost:8080 e use:
 ```text
 Sistema: PostgreSQL
 Servidor: db
-Usuario: anime
-Senha: anime
-Banco de dados: anime_store
+Usuario: bo_mangas
+Senha: bo_mangas
+Banco de dados: bo_mangas
 ```
 
 Se a pagina nao abrir, provavelmente o servico `adminer` nao esta rodando. Suba ele com:
@@ -68,7 +68,7 @@ No Adminer, as tabelas mais importantes para mostrar sao:
 Abra http://localhost:8000/health. Resposta esperada:
 
 ```json
-{"status":"ok"}
+{ "status": "ok" }
 ```
 
 ### Swagger
@@ -94,11 +94,11 @@ Para demonstrar erro de regra de negocio, tente:
 - Alterar estoque para ficar abaixo da quantidade reservada para receber `STOCK_BELOW_RESERVED`.
 - Tentar ir direto de `draft` para `delivered` para receber `INVALID_ORDER_TRANSITION`.
 
-### Loja HTML integrada
+### Biblioteca HTML integrada
 
 Abra http://localhost:8000/. A pagina inicial da loja e servida pelo FastAPI a partir da pasta `static`.
 
-A tela usa assets locais em `static/assets` e representa a vitrine da Anime Store com exemplos de produtos como manga, figure e hoodie. Ela serve como material visual da entrega, enquanto os fluxos principais sao demonstrados pelos endpoints reais no Swagger.
+A tela usa capas locais em `static/capas` e representa a vitrine da BO Mangas com exemplos de series como One Piece, Jujutsu Kaisen, Naruto, Blue Lock, Bleach e My Hero Academia. Ela serve como material visual da entrega, enquanto os fluxos principais sao demonstrados pelos endpoints reais no Swagger.
 
 ## Migracoes
 
@@ -112,7 +112,7 @@ docker compose run --rm api alembic upgrade head
 
 ### Category
 
-Representa um agrupamento de produtos, como figures, roupas ou mangas.
+Representa um agrupamento de produtos, como shonen, seinen, esporte, fantasia ou colecoes especiais.
 
 - `id`: inteiro, PK.
 - `name`: texto obrigatorio.
@@ -122,19 +122,19 @@ Relacionamento: `Category 1:N Product`.
 
 ### Product
 
-Representa o produto comercial exibido na loja.
+Representa o manga comercial exibido na loja.
 
 - `category_id`: FK para `Category`.
 - `name`: nome do produto.
 - `description`: descricao usada no catalogo.
-- `franchise`: franquia do anime, como Naruto, One Piece ou Jujutsu Kaisen.
+- `franchise`: franquia do manga, como Naruto, One Piece ou Jujutsu Kaisen.
 - `active`: define se o produto aparece nas consultas.
 
 Relacionamento: `Product 1:N ProductVariant`.
 
 ### ProductVariant
 
-Representa o SKU vendavel do produto.
+Representa o SKU vendavel do produto, como volume unico, box ou edicao especial.
 
 - `product_id`: FK para `Product`.
 - `sku`: codigo unico normalizado em maiusculo.
@@ -373,7 +373,7 @@ O comportamento correto quando dois operadores tentam confirmar pedidos sobre a 
 - `GET /health`
 - `POST /catalog/categories`
 - `POST /catalog/products`
-- `GET /catalog/products?limit=10&offset=0&franchise=Dragon%20Ball&active=true`
+- `GET /catalog/products?limit=10&offset=0&franchise=One%20Piece&active=true`
 - `POST /catalog/variants`
 - `POST /catalog/variants/{variant_id}/stock`
 - `POST /customers`

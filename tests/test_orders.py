@@ -23,7 +23,7 @@ def test_create_order_calculates_totals(client: TestClient, store: dict[str, int
 
 
 def test_product_list_supports_pagination_and_filter(client: TestClient, store: dict[str, int]) -> None:
-    response = client.get("/catalog/products?limit=10&offset=0&franchise=Naruto&active=true")
+    response = client.get("/catalog/products?limit=10&offset=0&franchise=One%20Piece&active=true")
 
     assert response.status_code == 200
     assert response.json()[0]["id"] == store["product_id"]
@@ -94,14 +94,14 @@ def test_paid_order_can_be_shipped(client: TestClient, store: dict[str, int]) ->
 def test_coupon_applies_discount_and_free_shipping(client: TestClient, store: dict[str, int]) -> None:
     client.post(
         "/coupons",
-        json={"code": "AKATSUKI10", "percent_off": 10, "min_subtotal": "100.00", "usage_limit": 1},
+        json={"code": "BO10", "percent_off": 10, "min_subtotal": "100.00", "usage_limit": 1},
     )
 
     response = client.post(
         "/orders",
         json={
             "customer_id": store["customer_id"],
-            "coupon_code": "akatsuki10",
+            "coupon_code": "bo10",
             "items": [{"variant_id": store["variant_id"], "quantity": 2}],
         },
     )
@@ -114,14 +114,14 @@ def test_coupon_applies_discount_and_free_shipping(client: TestClient, store: di
 def test_coupon_minimum_subtotal_is_enforced(client: TestClient, store: dict[str, int]) -> None:
     client.post(
         "/coupons",
-        json={"code": "HOKAGE50", "percent_off": 50, "min_subtotal": "200.00"},
+        json={"code": "MANGA50", "percent_off": 50, "min_subtotal": "200.00"},
     )
 
     response = client.post(
         "/orders",
         json={
             "customer_id": store["customer_id"],
-            "coupon_code": "HOKAGE50",
+            "coupon_code": "MANGA50",
             "items": [{"variant_id": store["variant_id"], "quantity": 1}],
         },
     )

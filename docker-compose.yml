@@ -2,7 +2,7 @@ services:
   api:
     build: .
     environment:
-      DATABASE_URL: ${DATABASE_URL:-postgresql+psycopg://anime:anime@db:5432/anime_store}
+      DATABASE_URL: ${DATABASE_URL:-postgresql+psycopg://bo_mangas:bo_mangas@db:5432/bo_mangas}
       SECRET_KEY: ${SECRET_KEY:-dev-secret}
       PORT: ${PORT:-8000}
       PYTHONPATH: /app
@@ -17,15 +17,15 @@ services:
   db:
     image: postgres:16-alpine
     environment:
-      POSTGRES_DB: anime_store
-      POSTGRES_USER: anime
-      POSTGRES_PASSWORD: anime
+      POSTGRES_DB: bo_mangas
+      POSTGRES_USER: bo_mangas
+      POSTGRES_PASSWORD: bo_mangas
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U anime -d anime_store"]
+      test: ["CMD-SHELL", "pg_isready -U bo_mangas -d bo_mangas"]
       interval: 5s
       timeout: 5s
       retries: 10

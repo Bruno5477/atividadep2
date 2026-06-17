@@ -41,22 +41,22 @@ def client(db_session: Session) -> Generator[TestClient, None, None]:
 
 @pytest.fixture()
 def store(client: TestClient) -> dict[str, int]:
-    category = client.post("/catalog/categories", json={"name": "Figures"}).json()
+    category = client.post("/catalog/categories", json={"name": "Shonen"}).json()
     product = client.post(
         "/catalog/products",
         json={
             "category_id": category["id"],
-            "name": "Naruto Uzumaki Figure",
-            "description": "Colecionavel oficial de mesa",
-            "franchise": "Naruto",
+            "name": "One Piece Vol. 1",
+            "description": "Primeiro volume do manga One Piece",
+            "franchise": "One Piece",
         },
     ).json()
     variant = client.post(
         "/catalog/variants",
         json={
             "product_id": product["id"],
-            "sku": "nar-fig-01",
-            "name": "Standard",
+            "sku": "one-piece-vol-01",
+            "name": "Volume 1",
             "price": "120.00",
             "stock_quantity": 2,
         },

@@ -9,7 +9,7 @@ from app.routers.catalog import router as catalog_router
 from app.routers.customers import router as customers_router
 from app.routers.orders import coupon_router, router as orders_router
 
-app = FastAPI(title="Anime Store API", version="1.0.0")
+app = FastAPI(title="BO Mangas API", version="1.0.0")
 register_exception_handlers(app)
 BASE_DIR = Path(__file__).resolve().parents[1]
 app.mount("/static", StaticFiles(directory=BASE_DIR / "static"), name="static")

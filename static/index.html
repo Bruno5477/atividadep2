@@ -3,18 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Anime Store</title>
+    <title>BO Mangas</title>
     <link rel="stylesheet" href="/static/styles.css" />
   </head>
   <body>
     <header class="topbar">
       <a class="brand" href="/">
-        <span class="brand-mark">AS</span>
-        <span>Anime Store</span>
+        <span class="brand-mark">BO</span>
+        <span>BO Mangas</span>
       </a>
       <nav class="nav-links" aria-label="Navegacao principal">
-        <a href="#produtos">Produtos</a>
-        <a href="#colecoes">Coleções</a>
+        <a href="#catalogo">Catalogo</a>
+        <a href="#colecoes">Colecoes</a>
         <a href="/docs">Docs da API</a>
       </nav>
     </header>
@@ -22,93 +22,110 @@
     <main>
       <section class="hero">
         <div class="hero-copy">
-          <p class="eyebrow">Figure, manga, roupa e colecionavel</p>
-          <h1>Anime Store</h1>
+          <p class="eyebrow">Biblioteca online de mangas</p>
+          <h1>BO Mangas</h1>
           <p class="hero-text">
-            Uma vitrine para produtos de anime conectada a API de ecommerce com
-            estoque, cupons, pedidos, pagamento e envio.
+            Uma vitrine para colecoes de manga conectada a uma API de ecommerce
+            com catalogo, estoque, cupons, pedidos, pagamento, envio e auditoria.
           </p>
           <div class="actions">
             <a class="button primary" href="/docs">Abrir API</a>
-            <a class="button secondary" href="#produtos">Ver vitrine</a>
+            <a class="button secondary" href="#catalogo">Ver catalogo</a>
           </div>
         </div>
 
-        <div class="hero-stage" aria-label="Produtos em destaque">
-          <img
-            class="hero-item hero-item-large"
-            src="/static/assets/figure.jpeg"
-            alt="Figure colecionavel"
-          />
-          <img
-            class="hero-item"
-            src="/static/assets/manga.jpeg"
-            alt="Colecao de manga"
-          />
-          <img
-            class="hero-item"
-            src="/static/assets/moletom.jpeg"
-            alt="Moletom anime"
-          />
+        <div class="cover-wall" aria-label="Capas de mangas em destaque">
+          <img src="/static/capas/one_piece.jpg" alt="Capa de One Piece" />
+          <img src="/static/capas/jujutsu-kaisen.jpg" alt="Capa de Jujutsu Kaisen" />
+          <img src="/static/capas/naruto.jpg" alt="Capa de Naruto" />
+          <img src="/static/capas/Blue_Lock-1.jpg" alt="Capa de Blue Lock" />
+          <img src="/static/capas/bleach.jpg" alt="Capa de Bleach" />
+          <img src="/static/capas/black_clover.jpg" alt="Capa de Black Clover" />
         </div>
       </section>
 
-      <section class="store-strip" aria-label="Resumo da loja">
+      <section class="store-strip" aria-label="Resumo da biblioteca">
+        <div>
+          <strong>Acervo organizado</strong>
+          <span>Produtos por franquia, categoria e volume</span>
+        </div>
         <div>
           <strong>Estoque reservado</strong>
-          <span>Confirmacao segura de pedidos</span>
+          <span>Confirmacao segura antes do envio</span>
         </div>
         <div>
-          <strong>Cupons ativos</strong>
-          <span>Desconto por subtotal e validade</span>
-        </div>
-        <div>
-          <strong>Frete calculado</strong>
-          <span>Total derivado automaticamente</span>
+          <strong>Pedidos completos</strong>
+          <span>Cupom, frete, pagamento e rastreio</span>
         </div>
       </section>
 
-      <section id="produtos" class="section">
+      <section id="catalogo" class="section">
         <div class="section-heading">
-          <p class="eyebrow">Lancamentos</p>
-          <h2>Produtos em destaque</h2>
+          <div>
+            <p class="eyebrow">Lancamentos e favoritos</p>
+            <h2>Catalogo de mangas</h2>
+          </div>
+          <a class="text-link" href="/docs">Cadastrar pelo Swagger</a>
         </div>
 
         <div class="product-grid">
           <article class="product-card">
-            <img
-              class="product-image-face"
-              src="/static/assets/figure.jpeg"
-              alt="Figure do Goku"
-            />
+            <img src="/static/capas/one_piece.jpg" alt="Capa de One Piece" />
             <div class="product-info">
-              <span class="tag">Figure</span>
-              <h3>Figure do Goku</h3>
-              <p>Colecionavel de mesa inspirado em Dragon Ball.</p>
-              <strong>R$ 120,00</strong>
+              <span class="tag">Aventura</span>
+              <h3>One Piece</h3>
+              <p>Volume para colecionadores que acompanham a grande jornada.</p>
+              <strong>R$ 39,90</strong>
             </div>
           </article>
 
           <article class="product-card">
-            <img
-              src="/static/assets/manga.jpeg"
-              alt="Box de mangas Jujutsu Kaisen"
-            />
+            <img src="/static/capas/jujutsu-kaisen.jpg" alt="Capa de Jujutsu Kaisen" />
             <div class="product-info">
-              <span class="tag">Manga</span>
-              <h3>Box Jujutsu Kaisen</h3>
-              <p>Volume inicial para montar a colecao.</p>
-              <strong>R$ 89,90</strong>
+              <span class="tag">Acao</span>
+              <h3>Jujutsu Kaisen</h3>
+              <p>Manga de batalha sobrenatural com estoque por volume.</p>
+              <strong>R$ 34,90</strong>
             </div>
           </article>
 
           <article class="product-card">
-            <img src="/static/assets/moletom.jpeg" alt="Moletom anime preto" />
+            <img src="/static/capas/naruto.jpg" alt="Capa de Naruto" />
             <div class="product-info">
-              <span class="tag">Roupa</span>
-              <h3>Moletom Akatsuki</h3>
-              <p>SKU com variacao de tamanho e estoque dedicado.</p>
-              <strong>R$ 179,90</strong>
+              <span class="tag">Shonen</span>
+              <h3>Naruto</h3>
+              <p>Classico de ninja para montar colecao do primeiro ao ultimo arco.</p>
+              <strong>R$ 32,90</strong>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="/static/capas/Blue_Lock-1.jpg" alt="Capa de Blue Lock" />
+            <div class="product-info">
+              <span class="tag">Esporte</span>
+              <h3>Blue Lock</h3>
+              <p>Serie de futebol com variantes vendaveis por edicao.</p>
+              <strong>R$ 36,90</strong>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="/static/capas/bleach.jpg" alt="Capa de Bleach" />
+            <div class="product-info">
+              <span class="tag">Fantasia</span>
+              <h3>Bleach</h3>
+              <p>Volume de acao espiritual com controle de estoque fisico.</p>
+              <strong>R$ 35,90</strong>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="/static/capas/mha-41.jpg" alt="Capa de My Hero Academia" />
+            <div class="product-info">
+              <span class="tag">Herois</span>
+              <h3>My Hero Academia</h3>
+              <p>Edicao recente para leitores que acompanham a colecao.</p>
+              <strong>R$ 38,90</strong>
             </div>
           </article>
         </div>
@@ -116,8 +133,12 @@
 
       <section id="colecoes" class="collection-band">
         <div>
-          <p class="eyebrow">Coleções</p>
-          <h2>Monte sua coleção Aqui!</h2>
+          <p class="eyebrow">Colecoes</p>
+          <h2>Monte sua biblioteca de mangas</h2>
+          <p>
+            Use os endpoints para criar categorias, produtos, variantes, clientes
+            e pedidos com as mesmas regras de negocio da entrega.
+          </p>
         </div>
         <a class="button dark" href="/docs">Testar endpoints</a>
       </section>

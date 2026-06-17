@@ -2,7 +2,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    database_url: str = "sqlite:///./anime_store.db"
+    database_url: str = "sqlite:///./bo_mangas.db"
     secret_key: str = "dev-secret"
     port: int = 8000
 
